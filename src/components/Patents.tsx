@@ -18,23 +18,52 @@ const Patents: React.FC = () => {
       applicationNumber: "IN202341007623",
       status: "Filed",
       date: "2023-05-12",
-      description: "A novel system that utilizes fuzzy logic algorithms to detect and analyze human emotions from facial expressions with high accuracy and real-time processing capabilities."
+      description: "A groundbreaking system leveraging cutting-edge **fuzzy logic algorithms** to **accurately detect and analyze human emotions** from facial expressions in real-time. This advanced technology brings a revolutionary approach to emotion recognition, enabling unprecedented accuracy and speed in understanding human behavior — a game changer for industries such as healthcare, education, and customer experience."
     },
     {
       title: "AI-Based Healthcare Diagnostic Assistant",
       applicationNumber: "IN202341009845",
       status: "Filed",
       date: "2023-07-28",
-      description: "An artificial intelligence system that assists healthcare professionals in diagnosing medical conditions based on patient symptoms, medical history, and relevant medical databases."
+      description: "An **artificial intelligence-driven healthcare assistant** designed to revolutionize diagnostics by leveraging a deep understanding of patient symptoms, medical history, and cutting-edge medical databases. This powerful tool empowers healthcare professionals with lightning-fast, precise diagnostic capabilities, streamlining decision-making and improving patient outcomes. The future of **AI in healthcare** is here."
     },
     {
       title: "Humanoid Robot Control System",
       applicationNumber: "IN202341012567",
       status: "Filed",
       date: "2023-09-15",
-      description: "A control system for humanoid robots that enables more natural and fluid movements through advanced algorithms and sensor integration."
+      description: "An **innovative humanoid robot control system** that pushes the boundaries of human-robot interaction. By integrating **advanced algorithms** and **state-of-the-art sensor technology**, this system enables humanoid robots to move with an **unmatched level of naturalness and fluidity**, offering unparalleled precision in applications ranging from personal assistants to next-generation robotics research."
+    },
+    {
+      title: "Fuzzy Expert System for Emotion Detection in Students",
+      applicationNumber: "202421002653A",
+      status: "Published",
+      date: "2024-03-22",
+      description: "A **breakthrough Fuzzy Expert System** designed specifically for **emotion detection and analysis** within student populations. This patented system utilizes fuzzy logic to provide an **in-depth understanding of emotional states**, offering educators and administrators a **powerful tool** for student well-being analysis, personalized learning approaches, and mental health support."
+    },
+    {
+      title: "The Emotion Recognition System for Movies through Facial Expressions (ERS)",
+      applicationNumber: "G10L002524000",
+      status: "Published",
+      date: "2024-06-11",
+      description: "A **cutting-edge emotion recognition system** for analyzing **facial expressions in movies**, enabling a new era of **interactive cinematic experiences**. This patented system brings **AI-powered emotional insights** to the film industry, providing filmmakers, marketers, and audience researchers with powerful tools to understand emotional engagement and tailor content more effectively."
+    },
+    {
+      title: "System and Method for Calculating Surface Area and Compressive Strength of Irregular Paver Blocks",
+      applicationNumber: "202521007418A",
+      status: "Published",
+      date: "2024-05-30",
+      description: "An **innovative method and system** designed to calculate the **surface area and compressive strength** of irregular paver blocks with high precision. This patent offers a **significant improvement in construction material testing**, providing engineers and manufacturers with a faster, more reliable way to assess paver quality and optimize design for construction projects."
+    },
+    {
+      title: "System and Method for Comprehensive Soil Test Result Calculation and Automated Report Generation",
+      applicationNumber: "202521007769",
+      status: "Published",
+      date: "2024-06-05",
+      description: "A **comprehensive soil testing solution** that automates the **calculation of test results** and generates detailed, **customized reports**. This patented system significantly improves the efficiency of soil analysis in agriculture and construction, providing fast, accurate, and actionable insights for engineers, farmers, and land developers."
     }
   ];
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -112,7 +141,9 @@ const Patents: React.FC = () => {
                   </div>
                   
                   <p className="text-slate-600 dark:text-slate-300">
-                    {patent.description}
+                    {patent.description.split("**").map((part, index) => 
+                      index % 2 === 0 ? part : <strong key={index}>{part}</strong>
+                    )}
                   </p>
                 </div>
               </div>
