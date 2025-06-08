@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Phone, Mail, Linkedin, FileText, Send, CheckCircle } from 'lucide-react';
-
+import resume from "./resume.pdf";
 const Contact: React.FC = () => {
   const contactRef = useRef<HTMLDivElement>(null);
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-800 dark:text-white mb-1">Resume</h3>
-                  <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline">Download Resume</a>
+                  <a href={resume} className="text-blue-600 dark:text-blue-400 hover:underline" download>Download Resume</a>
                 </div>
               </div>
             </div>
